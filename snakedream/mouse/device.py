@@ -3,6 +3,8 @@
 from collections.abc import Iterable
 from typing import Optional
 
+UINPUT_AVAILABLE = False
+
 try:
     import uinput
 
@@ -57,4 +59,4 @@ try:
 
     UINPUT_AVAILABLE = True
 except ImportError:
-    UINPUT_AVAILABLE = False
+    pass
