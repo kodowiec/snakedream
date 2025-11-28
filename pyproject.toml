@@ -17,7 +17,7 @@ maintainers = [
 dependencies = [
   "bleak",
   "matplotlib",
-  "python-uinput",
+  "python-uinput ; sys_platform == 'linux'",
   "PyAutoGUI"
 ]
 requires-python = ">= 3.12"

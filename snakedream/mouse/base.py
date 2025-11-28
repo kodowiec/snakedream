@@ -110,6 +110,14 @@ class MouseFactory:
     @staticmethod
     def _get_uinput() -> type[BaseMouse]:
         """Return UInput mouse implementation class."""
+        from snakedream.mouse.device import UINPUT_AVAILABLE
+
+        if not UINPUT_AVAILABLE:
+            raise ImportError(
+                "python-uinput is not available. "
+                "This backend is only supported on Linux."
+            )
+
         from snakedream.mouse.device import UInputMouse
 
         return UInputMouse
